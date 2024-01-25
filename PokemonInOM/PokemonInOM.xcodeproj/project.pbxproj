@@ -22,6 +22,8 @@
 		01D182DF2B6291F700CB17AB /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D182DE2B6291F700CB17AB /* Pokemon.swift */; };
 		01D182E22B62922700CB17AB /* PokemonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D182E12B62922700CB17AB /* PokemonListTableViewCell.swift */; };
 		01D182E42B62928000CB17AB /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D182E32B62928000CB17AB /* PokemonListViewModel.swift */; };
+		01D182E62B62C08E00CB17AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D182E52B62C08E00CB17AB /* Constants.swift */; };
+		01D182E82B62C1E100CB17AB /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D182E72B62C1E100CB17AB /* Webservices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		01D182DE2B6291F700CB17AB /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		01D182E12B62922700CB17AB /* PokemonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListTableViewCell.swift; sourceTree = "<group>"; };
 		01D182E32B62928000CB17AB /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
+		01D182E52B62C08E00CB17AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01D182E72B62C1E100CB17AB /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 		01D182CE2B628F6300CB17AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				01D182E72B62C1E100CB17AB /* Webservices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 		01D182CF2B628F6C00CB17AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				01D182E52B62C08E00CB17AB /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -360,7 +366,9 @@
 				01D182E42B62928000CB17AB /* PokemonListViewModel.swift in Sources */,
 				01D182E22B62922700CB17AB /* PokemonListTableViewCell.swift in Sources */,
 				01D1829E2B628B1B00CB17AB /* AppDelegate.swift in Sources */,
+				01D182E82B62C1E100CB17AB /* Webservices.swift in Sources */,
 				01D182D72B62902700CB17AB /* PokemonListTableViewController.swift in Sources */,
+				01D182E62B62C08E00CB17AB /* Constants.swift in Sources */,
 				01D182DD2B62906B00CB17AB /* SettingsTableViewController.swift in Sources */,
 				01D182DB2B62905400CB17AB /* PokemonDetailViewController.swift in Sources */,
 				01D182D92B62903B00CB17AB /* StarredTableViewController.swift in Sources */,

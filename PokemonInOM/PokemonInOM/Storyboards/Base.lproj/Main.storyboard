@@ -2,22 +2,23 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGg-DZ-e0n">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Top Headlines-->
+        <!--Top Pokemons-->
         <scene sceneID="tNg-2V-KS1">
             <objects>
-                <tableViewController id="6fc-Lu-hnG" customClass="NewsListTableViewController" customModule="NewsAppForMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6fc-Lu-hnG" customClass="PokemonListTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8I8-8P-v2G">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsArticleTableViewCell" rowHeight="100" id="Yci-1q-Q4t" customClass="NewsArticleListTableViewCell" customModule="NewsAppForMe" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsArticleTableViewCell" rowHeight="100" id="Yci-1q-Q4t" customClass="NewsArticleListTableViewCell" customModule="PokemonInOM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yci-1q-Q4t" id="FoA-GQ-7ov">
@@ -60,7 +61,7 @@
                             <outlet property="delegate" destination="6fc-Lu-hnG" id="NbJ-Y5-8Iw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Headlines" id="9jh-3l-f2C"/>
+                    <navigationItem key="navigationItem" title="Top Pokemons" id="9jh-3l-f2C"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wt6-rr-3UI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +70,7 @@
         <!--Article Detail View Controller-->
         <scene sceneID="bJq-2i-cGE">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailViewControllerID" id="Hk4-nf-VtQ" customClass="ArticleDetailViewController" customModule="NewsAppForMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleDetailViewControllerID" id="Hk4-nf-VtQ" customClass="ArticleDetailViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwS-iZ-4hp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +109,7 @@
         <!--Starred News-->
         <scene sceneID="AXI-Hw-Ueb">
             <objects>
-                <tableViewController id="FfU-X5-R0H" customClass="StarredTableTableViewController" customModule="NewsAppForMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FfU-X5-R0H" customClass="StarredTableTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gHD-pf-7pe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +157,7 @@
         <!--Settings-->
         <scene sceneID="Cxp-bB-UYO">
             <objects>
-                <tableViewController id="O4B-3Y-hBW" customClass="SettingsTableViewController" customModule="NewsAppForMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O4B-3Y-hBW" customClass="SettingsTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lb5-4w-GLg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
