@@ -1,10 +1,11 @@
-## News App
+## PokemonInOM App
 
 #### Features
 
-1. List of top headlines
-2. Able to view top headlines from Canada and the US
-3. Able to save the article to Firebase for future records
+1. List of first 100 Pokémon
+2. Simple search feature
+3. Details: Name, image, stats, etc.
+4. Save favourites 
 
 #### Task List
 - [X] Features Planning
@@ -33,7 +34,7 @@
 ### Build Steps
 
 - Clone this project either via Xcode or terminal:
-  `git clone https://github.com/patiljignesh/newsappforme.git` 
+  `git clone https://github.com/patiljignesh/Pokemoninom.git` 
 - For branch selection use:
   `--single-branch --branch [branchname]` after `clone`
 - After completion, open `NewsAppForMe.xcodeproj` using Xcode.
