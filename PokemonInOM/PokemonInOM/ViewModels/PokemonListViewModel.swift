@@ -21,14 +21,9 @@ extension PokemonListViewModel {
         return self.pokemonListEntry.count
     }
     
-    func newsArticleAtIndex(_ index: Int) -> PokemonListViewModel {
+    func newPokemonAtIndex(_ index: Int) -> PokemonDetailViewModel {
         let pokemonListEntry = self.pokemonListEntry[index]
-        return PokemonListViewModel(pokemonListEntry)
+        return PokemonDetailViewModel(pokemonListEntry)
     }
-}
-
-struct PokemonListViewModel {
-    private let pokemonListEntry: PokemonListEntry
-    
 }
 

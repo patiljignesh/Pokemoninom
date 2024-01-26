@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="-358.01526717557249" y="778.87323943661977"/>
         </scene>
-        <!--Article Detail View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="bJq-2i-cGE">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailViewControllerID" id="Hk4-nf-VtQ" customClass="ArticleDetailViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PokemonDetailViewControllerID" id="Hk4-nf-VtQ" customClass="PokemonDetailViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwS-iZ-4hp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-1161" y="-625"/>
         </scene>
-        <!--Starred Pokemon-->
+        <!--Starred Pokemons-->
         <scene sceneID="AXI-Hw-Ueb">
             <objects>
-                <tableViewController id="FfU-X5-R0H" customClass="StarredTableTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FfU-X5-R0H" customClass="StarredTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gHD-pf-7pe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="FfU-X5-R0H" id="DY0-Ka-P77"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Starred Pokemon" id="qdg-5D-S64"/>
+                    <navigationItem key="navigationItem" title="Starred Pokemons" id="qdg-5D-S64"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOV-9U-Z1x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

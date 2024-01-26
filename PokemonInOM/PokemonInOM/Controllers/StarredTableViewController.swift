@@ -11,6 +11,8 @@ class StarredTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setup()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -86,4 +88,12 @@ class StarredTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension StarredTableViewController {
+    
+    private func setup(){
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
 }

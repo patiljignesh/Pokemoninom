@@ -8,6 +8,8 @@
 import UIKit
 
 class PokemonListTableViewController: UITableViewController {
+    
+    private var pokemonListViewModel: PokemonListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +18,6 @@ class PokemonListTableViewController: UITableViewController {
 //        setupRefreshControl()
         setup()
 //        fetchNewsArticles()
-    }
-    
-    private func setup(){
-        fetchPokemon()
     }
     
     private func fetchPokemon() {
@@ -72,39 +70,39 @@ extension PokemonListTableViewController {
     // MARK: - App Setup
     private func setup(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        fetchPokemon()
     }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.PokemonListViewModel == nil ? 0 : self.PokemonListViewModel.numberOfSections
+        return self.pokemonListViewModel == nil ? 0 : self.pokemonListViewModel.numberOfSections
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.PokemonListViewModel.numberOfRowsInSection(section)
+        return self.pokemonListViewModel.numberOfRowsInSection(section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonListTableViewCell", for: indexPath) as? NewsArticleListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonListTableViewCell", for: indexPath) as? PokemonListTableViewCell else {
             fatalError("PokemonListTableViewCell not found")
         }
         
-        let newsArticleViewModel = self.newsArticleListViewModel.newsArticleAtIndex(indexPath.row)
-        cell.newsTitleLabel.text = newsArticleViewModel.title
-        cell.newsDescriptionLabel.text = newsArticleViewModel.description
+        let newPokemonViewModel = self.pokemonListViewModel.newPokemonAtIndex(indexPath.row)
+        cell.pokeNameTitleLabel.text = newPokemonViewModel.title
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let articleDetailViewModel = self.newsArticleListViewModel.newsArticleAtIndex(indexPath.row)
-        navigateToDetailViewController(with: articleDetailViewModel)
+        let pokemonDetailViewModel = self.pokemonListViewModel.newPokemonAtIndex(indexPath.row)
+        navigateToDetailViewController(with: pokemonDetailViewModel)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Navigation
-    private func navigateToDetailViewController(with articleViewModel: ArticleDetailViewModel) {
+    private func navigateToDetailViewController(with pokemonDetailViewModel: PokemonDetailViewModel) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name if different
-        if let detailVC = storyboard.instantiateViewController(withIdentifier: "ArticleDetailViewControllerID") as? ArticleDetailViewController {
-            detailVC.articleViewModel = articleViewModel
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "ArticleDetailViewControllerID") as? PokemonDetailViewController {
+            detailVC.pokemonDetailViewModel = pokemonDetailViewModel
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
