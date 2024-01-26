@@ -17,51 +17,10 @@ class PokemonListTableViewController: UITableViewController {
 //        setupLanguagePreference()
 //        setupRefreshControl()
         setup()
-//        fetchNewsArticles()
+        fetchPokemon()
     }
     
-    private func fetchPokemon() {
-        
-        let pokemonBaseURL = Constants.API.baseURL
-        let url = URL(string: "\(pokemonBaseURL)")!
-        
-        Webservices().getPokemonList(url: url) { pokemonList in
-                DispatchQueue.main.async {
-                    if let pokemonList = pokemonList {
-                        print("pokemonList0 -> \(pokemonList.count)")
-//                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
-//                        self.tableView.reloadData()
-                        
-                        if let firstPokemonURL = pokemonList.first?.url {
-                            Webservices().fetchPokemonDetail(url: firstPokemonURL) { pokemonDetail in
-                                if let pokemonDetail = pokemonDetail {
-                                    // Handle the detailed data (e.g., update the UI or a model)
-                                    print("Fetched details for: \(pokemonDetail.name)")
-                                }
-                            }
-                        }
-                        
-                    }
-//                    self.refreshControl?.endRefreshing()
-                }
-        }
-        
-        //fetchPokemonDetail
-        
-        
-        
-//        Webservices().fetchPokemonList(url: url) { pokemonList in
-//            DispatchQueue.main.async {
-//                if let pokemonList = pokemonList {
-//                    //                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
-//                    //                        self.tableView.reloadData()
-//                    print("pokemonList -> \(pokemonList.count)")
-//                }
-//                
-////                    self.refreshControl?.endRefreshing()
-//            }
-//        }
-    }
+    
     
 }
 
@@ -70,7 +29,6 @@ extension PokemonListTableViewController {
     // MARK: - App Setup
     private func setup(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        fetchPokemon()
     }
 
     // MARK: - Table view data source
@@ -97,6 +55,45 @@ extension PokemonListTableViewController {
         navigateToDetailViewController(with: pokemonDetailViewModel)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    //MARK: - Webservice Call
+    
+    private func fetchPokemon() {
+        
+        let pokemonBaseURL = Constants.API.baseURL
+        let url = URL(string: "\(pokemonBaseURL)")!
+        
+        Webservices().getPokemonList(url: url) { pokemonList in
+                DispatchQueue.main.async {
+                    if let pokemonList = pokemonList {
+                        print("pokemonList0 -> \(pokemonList.count)")
+                        self.pokemonListViewModel = PokemonListViewModel(pokemonListEntry: pokemonList)
+                        self.tableView.reloadData()
+                
+                        
+                    }
+//                    self.refreshControl?.endRefreshing()
+                }
+        }
+        
+        //fetchPokemonDetail
+        
+        
+        
+//        Webservices().fetchPokemonList(url: url) { pokemonList in
+//            DispatchQueue.main.async {
+//                if let pokemonList = pokemonList {
+//                    //                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
+//                    //                        self.tableView.reloadData()
+//                    print("pokemonList -> \(pokemonList.count)")
+//                }
+//
+////                    self.refreshControl?.endRefreshing()
+//            }
+//        }
+    }
+    
+    
     
     // MARK: - Navigation
     private func navigateToDetailViewController(with pokemonDetailViewModel: PokemonDetailViewModel) {

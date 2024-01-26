@@ -17,11 +17,11 @@ class Webservices {
                 completion(nil)
             } else if let data = data {
                 
-                let pokemonList = try? JSONDecoder().decode(PokemonListResult.self, from: data)
+                let pokemonListResult = try? JSONDecoder().decode(PokemonListResult.self, from: data)
                 
-                if let pokemonList = pokemonList {
-//                    completion(pokemonList)
-                    print("pokemonList_result_name_0: \(pokemonList.results[0].name)")
+                if let pokemonListResult = pokemonListResult {
+                    completion(pokemonListResult.results)
+//                    print("pokemonList_result_name_0: \(pokemonList.results[0].name)")
                 }
             }
             
