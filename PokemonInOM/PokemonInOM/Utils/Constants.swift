@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     struct API {
-        static let baseURL = "https://pokeapi.co/api/v2/pokemon/"
+        static let baseURL = "https://pokeapi.co/api/v2/pokemon?limit=100"
 //        static let apiKey = "1d38baf2f91547a28752a9a255b59779"
     }
 

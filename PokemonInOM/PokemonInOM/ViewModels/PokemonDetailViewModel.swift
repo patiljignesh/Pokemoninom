@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseCore
 
 struct PokemonDetailViewModel {
     private let pokemonListEntry: PokemonListEntry
@@ -23,6 +24,11 @@ extension PokemonDetailViewModel {
         return self.pokemonListEntry.name
     }
     
+    var imageUrl: String {
+        return self.pokemonListEntry.url
+    }
+    
+    
 //    var description: String {
 //        return self.newsArticle.description ?? "No Description available"
 //    }
@@ -37,10 +43,10 @@ extension PokemonDetailViewModel {
 }
 
 // MARK: - Save to Firebase
-//extension PokemonDetailViewModel {
-//    func addToFavorites(completion: @escaping (Error?) -> Void) {
-//        FirebaseManager.shared.saveArticle(self) { error in
-//            completion(error)
-//        }
-//    }
-//}
+extension PokemonDetailViewModel {
+    func addToFavorites(completion: @escaping (Error?) -> Void) {
+        FirebaseManager.shared.saveArticle(self) { error in
+            completion(error)
+        }
+    }
+}

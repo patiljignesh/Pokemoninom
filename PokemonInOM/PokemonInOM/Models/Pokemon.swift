@@ -16,6 +16,7 @@ struct PokemonListResult: Decodable {
 struct PokemonListEntry: Codable {
     let name: String
     let url: String
+    let imageUrl: String
 }
 
 struct PokemonDetail: Codable {

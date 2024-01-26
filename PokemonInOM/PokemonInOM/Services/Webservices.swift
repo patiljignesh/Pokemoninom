@@ -21,7 +21,7 @@ class Webservices {
                 
                 if let pokemonListResult = pokemonListResult {
                     completion(pokemonListResult.results)
-//                    print("pokemonList_result_name_0: \(pokemonList.results[0].name)")
+                    print("pokemonList_result_name_0: \(pokemonListResult.results[0].name)")
                 }
             }
             

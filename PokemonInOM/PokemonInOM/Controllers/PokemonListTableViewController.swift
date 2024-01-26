@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PokemonListTableViewController: UITableViewController {
     
@@ -47,6 +48,11 @@ extension PokemonListTableViewController {
         
         let newPokemonViewModel = self.pokemonListViewModel.newPokemonAtIndex(indexPath.row)
         cell.pokeNameTitleLabel.text = newPokemonViewModel.title
+        print("title: \(newPokemonViewModel.title)")
+        print("IMGUR: \(newPokemonViewModel.imageUrl)")
+        if let imageUrl = URL(string: newPokemonViewModel.imageUrl) {
+            cell.imageView?.kf.setImage(with: imageUrl)
+        }
         return cell
     }
     
@@ -54,6 +60,15 @@ extension PokemonListTableViewController {
         let pokemonDetailViewModel = self.pokemonListViewModel.newPokemonAtIndex(indexPath.row)
         navigateToDetailViewController(with: pokemonDetailViewModel)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+//        Webservices().fetchPokemonDetail(url: pokemonDetailViewModel.imageUrl) { [weak self] pokemonDetail in
+//                DispatchQueue.main.async {
+//                    if let pokemonDetail = pokemonDetail {
+//                        self?.navigateToDetailViewController(with: pokemonDetailViewModel)
+//                    }
+//                }
+//            }
+//            tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: - Webservice Call
@@ -98,7 +113,7 @@ extension PokemonListTableViewController {
     // MARK: - Navigation
     private func navigateToDetailViewController(with pokemonDetailViewModel: PokemonDetailViewModel) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name if different
-        if let detailVC = storyboard.instantiateViewController(withIdentifier: "ArticleDetailViewControllerID") as? PokemonDetailViewController {
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "PokemonDetailViewControllerID") as? PokemonDetailViewController {
             detailVC.pokemonDetailViewModel = pokemonDetailViewModel
             self.navigationController?.pushViewController(detailVC, animated: true)
         }

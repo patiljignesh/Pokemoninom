@@ -64,6 +64,21 @@
                   endingLineNumber = "24"
                   offsetFromSymbolStart = "1040">
                </Location>
+               <Location
+                  uuid = "A092C98B-4D87-43C5-BAAD-6DA22403B1A2 - 7209684245ced85d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PokemonInOM.Webservices.getPokemonList(url: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;PokemonInOM.PokemonListEntry&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PokemonInOM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jigneshkumarpatil/Dropbox/Software_Development/2023/GitHub%20Projects/pokemoninom/pokemoninom/PokemonInOM/PokemonInOM/PokemonInOM/Services/Webservices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1092">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
