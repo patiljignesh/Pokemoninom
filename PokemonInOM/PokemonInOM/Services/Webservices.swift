@@ -17,28 +17,17 @@ class Webservices {
                 completion(nil)
             } else if let data = data {
                 
-                let pokemonList = try? JSONDecoder().decode(PokemonListEntry.self, from: data)
+                let pokemonList = try? JSONDecoder().decode(PokemonListResult.self, from: data)
                 
                 if let pokemonList = pokemonList {
 //                    completion(pokemonList)
-                    print("pokemonList: \(pokemonList.name)")
+                    print("pokemonList_result_name_0: \(pokemonList.results[0].name)")
                 }
             }
             
         }.resume()
     }
     
-    func fetchPokemonList(url: URL, completion: @escaping ([PokemonListEntry]?) -> ()) {
-            let url = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else {
-                    print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
-                    return
-                }
-                let pokemonList = try? JSONDecoder().decode([PokemonListEntry].self, from: data)
-                completion(pokemonList ?? [])
-            }.resume()
-        }
 
     func fetchPokemonDetail(url: String, completion: @escaping (PokemonDetail?) -> Void) {
         guard let url = URL(string: url) else { return }
@@ -52,3 +41,17 @@ class Webservices {
         }.resume()
     }
 }
+
+
+//    func fetchPokemonList(url: URL, completion: @escaping ([PokemonListEntry]?) -> ()) {
+//            let url = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+//            URLSession.shared.dataTask(with: url) { data, response, error in
+//                guard let data = data, error == nil else {
+//                    print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
+//                    return
+//                }
+//                let pokemonList = try? JSONDecoder().decode([PokemonListEntry].self, from: data)
+//                completion(pokemonList ?? [])
+//            }.resume()
+//        }
+//

@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct PokemonListResult: Decodable {
+    let count: Int
+    let next: String
+    let results: [PokemonListEntry]
+}
+
 struct PokemonListEntry: Codable {
     let name: String
     let url: String

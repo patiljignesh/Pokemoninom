@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="-1161" y="-625"/>
         </scene>
-        <!--Starred News-->
+        <!--Starred Pokemon-->
         <scene sceneID="AXI-Hw-Ueb">
             <objects>
                 <tableViewController id="FfU-X5-R0H" customClass="StarredTableTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,7 +129,7 @@
                             <outlet property="delegate" destination="FfU-X5-R0H" id="DY0-Ka-P77"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Starred News" id="qdg-5D-S64"/>
+                    <navigationItem key="navigationItem" title="Starred Pokemon" id="qdg-5D-S64"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOV-9U-Z1x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,40 +154,19 @@
             </objects>
             <point key="canvasLocation" x="-1161" y="779"/>
         </scene>
-        <!--Settings-->
+        <!--Search-->
         <scene sceneID="Cxp-bB-UYO">
             <objects>
-                <tableViewController id="O4B-3Y-hBW" customClass="SettingsTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O4B-3Y-hBW" customClass="SearchTableViewController" customModule="PokemonInOM" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lb5-4w-GLg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Language" id="c71-zt-xRS">
+                            <tableViewSection id="c71-zt-xRS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="x6E-BK-Qwr">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x6E-BK-Qwr" id="WL8-5Z-8Gl">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OB-lC-5w4">
-                                                    <rect key="frame" x="30" y="15" width="22" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="net-8V-gSj">
-                                                    <rect key="frame" x="326" y="10" width="49" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="6dc-z2-EhG">
-                                        <rect key="frame" x="0.0" y="100" width="393" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6dc-z2-EhG" id="QgL-oo-Hbu">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -200,10 +179,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qUq-sX-OvN">
-                                                    <rect key="frame" x="326" y="10" width="49" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
+                                                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Find Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="cUr-sq-NIj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="O4B-3Y-hBW" id="XC6-Nx-pNq"/>
+                                                    </connections>
+                                                </searchBar>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -215,11 +198,7 @@
                             <outlet property="delegate" destination="O4B-3Y-hBW" id="HgH-Qh-PUr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="xG2-NM-cJA"/>
-                    <connections>
-                        <outlet property="caLangSwitch" destination="qUq-sX-OvN" id="Fzz-Hb-fPq"/>
-                        <outlet property="usLangSwitch" destination="net-8V-gSj" id="WCF-jN-6Rx"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Search" id="xG2-NM-cJA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljZ-G3-tNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,11 +223,11 @@
             </objects>
             <point key="canvasLocation" x="1242" y="108"/>
         </scene>
-        <!--Settings-->
+        <!--Search-->
         <scene sceneID="dF0-rp-HoY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pav-gJ-0he" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="SLh-Gw-gIp"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="SLh-Gw-gIp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VT2-th-hTe">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -265,10 +244,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">

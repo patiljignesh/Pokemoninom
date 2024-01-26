@@ -94,32 +94,44 @@ class PokemonListTableViewController: UITableViewController {
     private func fetchPokemon() {
         
         let pokemonBaseURL = Constants.API.baseURL
-//        let apiKey = Constants.API.apiKey
-        
         let url = URL(string: "\(pokemonBaseURL)")!
-//        let url = URL(string: "https://newsapi.org/v2/top-headlines?apiKey=1d38baf2f91547a28752a9a255b59779&country=\(languagePref ?? "us")")!
+        
         Webservices().getPokemonList(url: url) { pokemonList in
                 DispatchQueue.main.async {
                     if let pokemonList = pokemonList {
                         print("pokemonList0 -> \(pokemonList.count)")
 //                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
 //                        self.tableView.reloadData()
+                        
+                        if let firstPokemonURL = pokemonList.first?.url {
+                            Webservices().fetchPokemonDetail(url: firstPokemonURL) { pokemonDetail in
+                                if let pokemonDetail = pokemonDetail {
+                                    // Handle the detailed data (e.g., update the UI or a model)
+                                    print("Fetched details for: \(pokemonDetail.name)")
+                                }
+                            }
+                        }
+                        
                     }
 //                    self.refreshControl?.endRefreshing()
                 }
         }
         
-        Webservices().fetchPokemonList(url: url) { pokemonList in
-            DispatchQueue.main.async {
-                if let pokemonList = pokemonList {
-                    //                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
-                    //                        self.tableView.reloadData()
-                    print("pokemonList -> \(pokemonList.count)")
-                }
-                
-//                    self.refreshControl?.endRefreshing()
-            }
-        }
+        //fetchPokemonDetail
+        
+        
+        
+//        Webservices().fetchPokemonList(url: url) { pokemonList in
+//            DispatchQueue.main.async {
+//                if let pokemonList = pokemonList {
+//                    //                        self.newsArticleListViewModel = NewsArticleListViewModel(newsArticle: newsArticles)
+//                    //                        self.tableView.reloadData()
+//                    print("pokemonList -> \(pokemonList.count)")
+//                }
+//                
+////                    self.refreshControl?.endRefreshing()
+//            }
+//        }
     }
     
     
