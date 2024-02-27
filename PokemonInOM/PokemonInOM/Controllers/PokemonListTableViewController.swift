@@ -85,15 +85,12 @@ extension PokemonListTableViewController {
                         self.pokemonListViewModel = PokemonListViewModel(pokemonListEntry: pokemonList)
                         self.tableView.reloadData()
                 
-                        
                     }
 //                    self.refreshControl?.endRefreshing()
                 }
         }
         
         //fetchPokemonDetail
-        
-        
         
 //        Webservices().fetchPokemonList(url: url) { pokemonList in
 //            DispatchQueue.main.async {
