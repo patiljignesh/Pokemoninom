@@ -8,7 +8,7 @@
 import Foundation
 
 struct PokemonListViewModel {
-    let pokemonListEntry: [PokemonListEntry]
+    var pokemonListEntry: [PokemonListEntry]
 }
 
 extension PokemonListViewModel {

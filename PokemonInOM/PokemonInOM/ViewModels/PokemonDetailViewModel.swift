@@ -24,8 +24,9 @@ extension PokemonDetailViewModel {
         return self.pokemonListEntry.name
     }
     
-    var imageUrl: String {
-        return self.pokemonListEntry.url
+    var imageURL: URL? {
+        guard let urlString = self.pokemonListEntry.imageUrl else { return nil }
+        return URL(string: urlString)
     }
     
     

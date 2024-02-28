@@ -9,14 +9,15 @@ import Foundation
 
 struct PokemonListResult: Decodable {
     let count: Int
-    let next: String
+    let next: String?
+    let previous: String?
     let results: [PokemonListEntry]
 }
 
 struct PokemonListEntry: Codable {
     let name: String
     let url: String
-    let imageUrl: String
+    var imageUrl: String?
 }
 
 struct PokemonDetail: Codable {
