@@ -28,19 +28,6 @@ extension PokemonDetailViewModel {
         guard let urlString = self.pokemonListEntry.imageUrl else { return nil }
         return URL(string: urlString)
     }
-    
-    
-//    var description: String {
-//        return self.newsArticle.description ?? "No Description available"
-//    }
-//    
-//    var author: String {
-//            return newsArticle.author ?? "Unknown Author"
-//        }
-//        
-//    var publishedAt: String {
-//        return newsArticle.publishedAt
-//    }
 }
 
 // MARK: - Save to Firebase

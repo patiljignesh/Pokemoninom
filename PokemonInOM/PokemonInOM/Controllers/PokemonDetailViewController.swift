@@ -15,8 +15,6 @@ class PokemonDetailViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let titleLabel = UILabel()
-    private let authorLabel = UILabel()
-    private let publishedDateLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let favoriteButton = UIButton()
     
@@ -64,8 +62,6 @@ extension PokemonDetailViewController {
         private func setupUIComponents() {
             setupContentView()
             setupTitleLabel()
-            setupAuthorLabel()
-            setupPublishedDateLabel()
             setupDescriptionLabel()
             setupFavoriteButton()
         }
@@ -97,36 +93,11 @@ extension PokemonDetailViewController {
             ])
         }
 
-        private func setupAuthorLabel() {
-            contentView.addSubview(authorLabel)
-            authorLabel.numberOfLines = 0
-            authorLabel.font = UIFont.boldSystemFont(ofSize: 16)
-            authorLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-                authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-                authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
-            ])
-        }
-
-        private func setupPublishedDateLabel() {
-            contentView.addSubview(publishedDateLabel)
-            publishedDateLabel.numberOfLines = 0
-            publishedDateLabel.font = UIFont.boldSystemFont(ofSize: 16)
-            publishedDateLabel.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                publishedDateLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 10),
-                publishedDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-                publishedDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
-            ])
-        }
-
         private func setupDescriptionLabel() {
             contentView.addSubview(descriptionLabel)
             descriptionLabel.numberOfLines = 0
             descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                descriptionLabel.topAnchor.constraint(equalTo: publishedDateLabel.bottomAnchor, constant: 10),
                 descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
                 descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
                 // Removed the bottomAnchor constraint for descriptionLabel
@@ -152,8 +123,6 @@ extension PokemonDetailViewController {
         private func displayArticleDetails() {
             if let viewModel = pokemonDetailViewModel {
                 titleLabel.text = viewModel.title
-                authorLabel.text = "Author: \(viewModel.title)"
-                publishedDateLabel.text = "Published: \(viewModel.title)"
                 descriptionLabel.text = viewModel.title
             }
         }
