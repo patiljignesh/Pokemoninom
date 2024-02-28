@@ -104,15 +104,6 @@ extension PokemonListTableViewController {
         let pokemonDetailViewModel = self.pokemonListViewModel.newPokemonAtIndex(indexPath.row)
         navigateToDetailViewController(with: pokemonDetailViewModel)
         tableView.deselectRow(at: indexPath, animated: true)
-        
-//        Webservices().fetchPokemonDetail(url: pokemonDetailViewModel.imageUrl) { [weak self] pokemonDetail in
-//                DispatchQueue.main.async {
-//                    if let pokemonDetail = pokemonDetail {
-//                        self?.navigateToDetailViewController(with: pokemonDetailViewModel)
-//                    }
-//                }
-//            }
-//            tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
